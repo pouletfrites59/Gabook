@@ -1,0 +1,22 @@
+header{
+	height: 100px;
+	background-color: #CBA985;
+	display: flex;
+}
+
+header p {
+	margin: 0;
+	padding-left: 60px;
+	padding-top: 20px;
+	font-size: 45px;
+	font-family: "Atomic Age";
+}
+
+header img {
+	width: 50px;
+	height: 50px;
+	padding-top: 25px;
+	padding-right: 60px;
+	position: absolute;
+	right: 0;
+}
