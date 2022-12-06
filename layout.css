@@ -4,6 +4,33 @@ header{
 	display: flex;
 }
 
+h1 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.1em;
+    font-family: "Inter";
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+	margin-top: 100px;
+	width: 100%;
+	height: 300px;
+	background-color: #CBA985;
+}
+
+footer p {
+	text-align: center;
+	padding-top: 125px;
+	font-size: 45px;
+	font-family: "Atomic Age";
+}
+
+
 header p {
 	margin: 0;
 	padding-left: 60px;
@@ -19,4 +46,70 @@ header img {
 	padding-right: 60px;
 	position: absolute;
 	right: 0;
+}
+
+.background {
+	width: 100%;
+}
+
+.footer_home {
+	padding-top: 150px;
+	display:flex;
+	justify-content: center;
+}
+
+.book_1, .book_2, .book_3, .book_4, .book_5, .book_6 {
+	height: 350px;
+}
+
+.book_1, .book_2, .book_3, .book_4, .book_5 {
+	padding-right: 50px;
+}
+
+.start_container {
+	position: relative;
+}
+
+.btn-link {
+	background-color: #CBA985;
+	padding: 10px 30px 10px 30px;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: black;
+	font-family: "Inter";
+	position: absolute;
+	top: 50%;
+	left: 45%;
+}
+
+.row {
+	min-height: 170px;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+.profiles_1_2 {
+	background-color: #F4F4F4;
+	padding: 10px 30px 10px 30px;
+	font-size: 30px;
+	text-align: left;
+	border-radius: 10px;
+	text-decoration: none;
+	color: black;
+	font-family: "Inter";
+	display: inline-flex;
+	width: 700px;
+	filter: drop-shadow(4px 4px 4px #C8A985);
+}
+
+.profile_picture {
+	border-radius: 100px;
+	width: 96px;
+	height: 96px;
+}
+
+.profile_name {
+	padding-left: 20px;
 }
