@@ -48,6 +48,34 @@ header img {
 	right: 0;
 }
 
+.book_row {
+	margin-top: 100px;
+	margin-right: 350px !important;
+}
+
+.interests {
+	background-color: #F4F4F4;
+	filter: drop-shadow(4px 4px 4px #C8A985);
+}
+
+.recommended_books {
+	margin-left: 70px;
+	background-color: #F4F4F4;
+	filter: drop-shadow(4px 4px 4px #C8A985);
+}
+
+.book_infos {
+	padding-left: 150px;
+	font-size: 30px;
+	text-align: left;
+	border-radius: 10px;
+	text-decoration: none;
+	color: black;
+	font-family: "Inter";
+	display: inline-flex;
+	width: 400px;
+}
+
 .background {
 	width: 100%;
 }
@@ -88,6 +116,15 @@ header img {
 	min-height: 170px;
 	margin-left: 150px;
 	margin-right: 150px;
+}
+
+.author, .description {
+	font-size: 25px;
+}
+
+.author {
+	padding-top: 35px;
+	padding-bottom: 35px;
 }
 
 .profiles_1_2 {

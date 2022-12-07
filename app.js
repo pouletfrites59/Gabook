@@ -2,44 +2,31 @@ import express from "express"
 import { engine } from "express-handlebars"
 import fs from 'fs'
 import $rdf from 'rdflib'
+import ParsingClient from "sparql-http-client/ParsingClient.js"
 
-// const games = [{
-// 	id: "super_mario_bros",
-// 	name: "Super Mario Bros.",
-// 	description: "A good game."
-// }, {
-// 	id: "the_legend_of_zelda",
-// 	name: "The legend of Zelda",
-// 	description: "A cool game."
-// }]
+var books = []
+
+//GET ALL literaryGenre
+//https://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=select+distinct+%3Fgenre+where+%7B%0D%0A++%5B%5D+dbo%3AliteraryGenre+%3Fgenre%0D%0A%7D&format=text%2Fhtml&timeout=30000&signal_void=on&signal_unconnected=on
 
 const stringQuery = `
-	SELECT 
-		?id 
-		?name 
-		?description
-	WHERE {
-		?game a <http://gameverse.com/owl/games#Game> .
-		?game a <http://gameverse.com/owl/games#Game> ?id .
-		?game a <http://gameverse.com/owl/games#Game> ?name .
-		?game a <http://gameverse.com/owl/games#Game> ?description .
+	SELECT * WHERE {
+		?book a dbo:Book .
+		?book dbo:author ?author . 
+		?book dbo:literaryGenre dbr:Romantic_comedy .
+		?book dbp:language "French"@en .
+
+		?book rdfs:label ?title.
+ 		FILTER(LANGMATCHES(LANG(?title), 'en'))
+
+		?book rdfs:comment ?description.
+ 		FILTER(LANGMATCHES(LANG(?description), 'en'))
 	}
 `
 
-// const fs = require("fs")
-// const $rdf = require("rdflib")
-
-// const query = $rdf.SPARQLToQuery(stringQuery, false, store)
-
-// const games = store.querySync(query).mqp(
-// 	gameResult => {
-// 		return {
-// 			id: gameResult['?id'].value,
-// 			name: gameResult['?name'].value,
-// 			description: gameResult['?description'].value,
-// 		}
-// 	}
-// )
+const client = new ParsingClient({
+	endpointUrl: 'https://dbpedia.org/sparql'
+})
 
 const app = express()
 
@@ -51,30 +38,62 @@ app.get("/layout.css", function(request, response) {
 	response.sendFile("layout.css", {root: "."})
 })
 
-app.get("/games/:id", function(request, response) {
+app.get("/book/:id", function(request, response) {
 	const id = request.params.id
-	const game = games.find(g => g.id == id)
-
+	
+	const book = books.find(b => b.id == id) 
 	const model = {
-		game: game
+		book: book
 	}
-
-	response.render("game.hbs", model);
+	response.render("book.hbs", model);
 })
 
-app.get("/games", function(request, response) {
+app.get("/books", async function(request, response) {
+	const query = `
+		SELECT * WHERE {
+			?book a dbo:Book .
+			?book dbo:author ?author . 
+			?book dbo:literaryGenre dbr:Fantasy_literature .
+			?book dbp:language "English"@en .
+			?book dbp:pubDate ?date .
+
+			?book rdfs:label ?title.
+			FILTER(LANGMATCHES(LANG(?title), 'en'))
+
+			?book rdfs:comment ?description.
+			FILTER(LANGMATCHES(LANG(?description), 'en'))
+		}
+	`
+
+	await client.query.select(query).then(rows => {
+		rows.forEach(row => {
+			books.push({
+				id: row.title.value.toLowerCase().replaceAll(" ", "_"),
+				title: row.title.value,
+				date: row.date.value,
+				description: row.description.value,
+				author: row.author.value,
+				lang: "English",
+			})
+		})
+		
+	}).catch(error => {
+		console.log(error)
+	})
 	const model = {
-		games: games
+		books: books
 	}
-	response.render("games.hbs", model)
+	response.render("books.hbs", model)
 })
 
 app.get("/", function(request, response) {
 	response.render("start.hbs")
 })
 
-app.get("/about", function(request, response) {
-	response.render("about.hbs")
+app.get("/user_profiles", function(request, response) {
+	//NEED REED .ttl
+
+	response.render("user_profiles.hbs")
 })
 
 app.listen("8080")
