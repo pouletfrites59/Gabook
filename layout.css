@@ -31,8 +31,10 @@ footer p {
 }
 
 
-header p {
+.gabook_home {
 	margin: 0;
+	text-decoration: none;
+	color: black;
 	padding-left: 60px;
 	padding-top: 20px;
 	font-size: 45px;
@@ -41,11 +43,10 @@ header p {
 
 header img {
 	width: 50px;
-	height: 50px;
+	height: 75px;
 	padding-top: 25px;
-	padding-right: 60px;
 	position: absolute;
-	right: 0;
+	right: 30px;
 }
 
 .book_row {
@@ -53,12 +54,40 @@ header img {
 	margin-right: 350px !important;
 }
 
-.interests {
-	background-color: #F4F4F4;
-	filter: drop-shadow(4px 4px 4px #C8A985);
+.row_recommended_books {
+	height: 200px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+.profile_police {
+	font-size: 20px;
+	font-family: "Inter";
+	font-weight: 300;
+}
+
+.yellow {
+	color: #C8A985;
+}
+
+.interest {
+	text-align: center;
+	font-size: 25px;
+}
+
+.row_recommended_books h1 {
+	padding-top: 20px !important;
+	font-size: 32px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.1em;
+    font-family: "Inter";
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .recommended_books {
+	border-radius: 20px;
 	margin-left: 70px;
 	background-color: #F4F4F4;
 	filter: drop-shadow(4px 4px 4px #C8A985);
@@ -74,6 +103,20 @@ header img {
 	font-family: "Inter";
 	display: inline-flex;
 	width: 400px;
+} 
+
+.name {
+	font-size: 25px;
+	font-family: "Inter";
+	font-weight: bold;
+}
+
+.profile_books {
+	border-radius: 20px;
+	display: inline-flex;
+	margin-left: 70px;
+	background-color: #F4F4F4;
+	filter: drop-shadow(4px 4px 4px #C8A985);
 }
 
 .background {
@@ -147,6 +190,15 @@ header img {
 	height: 96px;
 }
 
+.profile_padding {
+	margin-top: 30px;
+}
+
 .profile_name {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.profile_name_users {
 	padding-left: 20px;
 }

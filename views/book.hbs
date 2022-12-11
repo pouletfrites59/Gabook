@@ -1,10 +1,11 @@
-<div class="row book_row">
-	<div class="col-sm-12 book_infos">
-		<img src="book_1.jpg" alt="book_picture" class="book_1">
+<div class="row book_row" vocab="http://schema.org/">
+	<div class="col-sm-12 book_infos" typeof="Book">
+		<img src="{{picture}}" alt="book_picture" class="book_1">
 		<span class="profile_name">
-			<p>{{book.title}}, {{book.lang}}, {{book.date}}<br/></p>
-			<p class="author">Author: {{book.author}}<br/></p>
-			<p class="description ">{{book.description}}</p>
+			<p><span property="name">{{book.title}}</span>, <span property="inLanguage">{{book.lang}}</span>, <span property="datePublished">{{book.date}}</span><br/></p>
+			<p class="author" property="author" typeof="Person">Author: {{book.author}}<br/></p>
+			<p class="description" property="genre">Genre: {{book.genre}}<br/></p>
+			<p class="description" property="description">{{book.description}}</p>
 		</span>
 	</div>
 </div>

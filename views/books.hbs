@@ -1,14 +1,11 @@
-<div class="row">
-	<div class="col-sm-3 recommended_books">
-		<h1>Recommended</h1>
-		{{!-- <a href="/books" class="recommended_books">
-			<img src="book_3.jpg" alt="profile_picture" class="profile_picture">
-			<span class="profile_name">Alexandre Antoniutti @antoniutti <br/>Male 21</span>
-			
-		</a> --}}
+<div class="row row_recommended_books">
+	<div class="col-sm-3 profile_books">
+		<img src="/profiles_picture/{{picture}}.jpg" class="profile_picture profile_padding">
+		<span class="profile_name profile_police"><span class="name">{{user.name}} @{{user.nick}}</span></br>{{user.gender}} {{user.birthDate}} <br/>Student</br><span class="yellow">Langage</span></br>{{user.lang}}</span>
 	</div>
-	<div class="col-sm-8 recommended_books interests">
-		<h1>Recommended books</h1>
+	<div class="col-sm-8 recommended_books">
+		<h1>Interests</h1>
+		<p class="interest">{{user.genre}}</p>
 	</div>
 </div>
 <div class="row align-items-center justify-content-center">
@@ -16,7 +13,7 @@
 		<h1>Recommended books</h1>
 		<ul>
 			{{#each books}}
-				<li><a href="/book/{{id}}">{{title}}</a></li>
+				<p class="interest">{{author}} <a href="/book/{{id}}">{{title}}</a> {{lang}}</p>
 			{{/each}}
 		</ul>
 	</div>

@@ -1,0 +1,59 @@
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:schema="http://schema.org/">
+
+  <foaf:Person rdf:ID="user_1">
+    <foaf:name>Alex Anto</foaf:name>
+    <foaf:nick>pouletfrites</foaf:nick>
+    <foaf:gender>Male</foaf:gender>
+    <schema:birthDate>10-03-2001</schema:birthDate>
+    <schema:knowsLanguages>French,English</schema:knowsLanguages>
+    <foaf:interest>Adventure fiction,Fantasy literature</foaf:interest>
+  </foaf:Person>
+
+  <foaf:Person rdf:ID="user_2">
+    <foaf:name>Gigi Bra</foaf:name>
+    <foaf:nick>gigibra</foaf:nick>
+    <foaf:gender>Female</foaf:gender>
+    <schema:birthDate>10-03-2001</schema:birthDate>
+    <schema:knowsLanguages>English</schema:knowsLanguages>
+    <foaf:interest>American literature</foaf:interest>
+  </foaf:Person>
+
+  <foaf:Person rdf:ID="user_3">
+    <foaf:name>Khad Dj</foaf:name>
+    <foaf:nick>khaddj</foaf:nick>
+    <foaf:gender>Female</foaf:gender>
+    <schema:birthDate>07-01-2001</schema:birthDate>
+    <schema:knowsLanguages>English,Spanish</schema:knowsLanguages>
+    <foaf:interest>Children\'s literature</foaf:interest>
+  </foaf:Person>
+
+  <foaf:Person rdf:ID="user_4">
+    <foaf:name>Alber Einstein</foaf:name>
+    <foaf:nick>albein</foaf:nick>
+    <foaf:gender>Male</foaf:gender>
+    <schema:birthDate>02-04-1975</schema:birthDate>
+    <schema:knowsLanguages>German</schema:knowsLanguages>
+    <foaf:interest>Fantasy literature</foaf:interest>
+  </foaf:Person>
+
+  <foaf:Person rdf:ID="user_5">
+    <foaf:name>Clara Zou</foaf:name>
+    <foaf:nick>clazou</foaf:nick>
+    <foaf:gender>Female</foaf:gender>
+    <schema:birthDate>04-17-1998</schema:birthDate>
+    <schema:knowsLanguages>English</schema:knowsLanguages>
+    <foaf:interest>History</foaf:interest>
+  </foaf:Person>
+
+  <foaf:Person rdf:ID="user_6">
+    <foaf:name>Nono Ser</foaf:name>
+    <foaf:nick>nonoser</foaf:nick>
+    <foaf:gender>Male</foaf:gender>
+    <schema:birthDate>01-24-2001</schema:birthDate>
+    <schema:knowsLanguages>English</schema:knowsLanguages>
+    <foaf:interest>Autobiography</foaf:interest>
+  </foaf:Person>
+</rdf:RDF>
